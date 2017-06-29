@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+<style>
+table, td, th {
+	border: 1px solid black;
+	border-collapse: collapse;
+}
+</style>
+
+
+</head>
+<body>
+
+	<h2>학생정보</h2>
+
+	<table border="1">
+
+		<tr>
+
+			<td>학번</td>
+			<td>이름</td>
+			<td>학년</td>
+			<td>전화번호</td>
+			<td>나이</td>
+			<td>비고</td>
+
+		</tr>
+
+
+		<% list.forEach(function(item){ %>
+
+		<tr>
+			<td><a href='/update/<%- item.id %>'><%- item.strNum %></a></td>
+			<td><%- item.strName %></td>
+			<td><%- item.strGrade %></td>
+			<td><%- item.strTel %></td>
+			<td><%- item.intAge %></td>
+			<td><button onClick="location.href='/delete/<%- item._id %>'">삭제</td>
+		</tr>
+		<% }) %>
+
+	</table>
+	<button onClick="location.href='/insert'">학생정보 추가</button>
+
+
+
+</body>
+</html>
